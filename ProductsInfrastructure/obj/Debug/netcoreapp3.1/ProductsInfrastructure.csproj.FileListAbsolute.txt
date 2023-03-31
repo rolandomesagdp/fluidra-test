@@ -1,0 +1,13 @@
+D:\Study\fluidra-test\ProductsInfrastructure\bin\Debug\netcoreapp3.1\ProductsInfrastructure.deps.json
+D:\Study\fluidra-test\ProductsInfrastructure\bin\Debug\netcoreapp3.1\ProductsInfrastructure.dll
+D:\Study\fluidra-test\ProductsInfrastructure\bin\Debug\netcoreapp3.1\ProductsInfrastructure.pdb
+D:\Study\fluidra-test\ProductsInfrastructure\bin\Debug\netcoreapp3.1\ProductReader.dll
+D:\Study\fluidra-test\ProductsInfrastructure\bin\Debug\netcoreapp3.1\ProductReader.pdb
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.csproj.AssemblyReference.cache
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.AssemblyInfoInputs.cache
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.AssemblyInfo.cs
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.csproj.CoreCompileInputs.cache
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.csproj.CopyComplete
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.dll
+D:\Study\fluidra-test\ProductsInfrastructure\obj\Debug\netcoreapp3.1\ProductsInfrastructure.pdb

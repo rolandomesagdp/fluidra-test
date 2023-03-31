@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "40viyASrSqtGPubCBykDldD9NipoLCT+XMHPS1WfGCglxbNxD9six1fEAuGo+xgpDY57ToGXFHsAAWwSlQIekA==",
+  "success": true,
+  "projectFilePath": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\ProductsInfrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rolando\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.32\\microsoft.extensions.logging.abstractions.3.1.32.nupkg.sha512"
+  ],
+  "logs": []
+}
