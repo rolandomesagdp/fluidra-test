@@ -31,4 +31,5 @@
 .click-me-button:hover {
     cursor: pointer;
     background-color: #43d0a1;
+    color: white;
 }
