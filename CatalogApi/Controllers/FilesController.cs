@@ -3,9 +3,6 @@ using Microsoft.Extensions.Logging;
 using Catalog.RepositoryContracts;
 using Catalog.ProductFiles;
 using System;
-using Microsoft.EntityFrameworkCore;
-using CatalogInfrastructure;
-using System.Threading.Tasks;
 using CatalogApi.ProductFiles;
 
 namespace CatalogApi.Controllers
@@ -32,7 +29,7 @@ namespace CatalogApi.Controllers
                 _filesRepository.AddFile(
                     new ProductFile { FileName = file.FileName, FileExtension = file.FileExtension }
                 );
-                return Ok("The new file was successfully uploaded.");
+                return Ok(file);
             }
             catch (Exception ex)
             {
