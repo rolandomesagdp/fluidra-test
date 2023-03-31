@@ -562,8 +562,8 @@
     },
     "Catalog/1.0.0": {
       "type": "project",
-      "path": "../ProductReader/Catalog.csproj",
-      "msbuildProject": "../ProductReader/Catalog.csproj"
+      "path": "../Catalog/Catalog.csproj",
+      "msbuildProject": "../Catalog/Catalog.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -604,8 +604,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj": {
-              "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj"
+            "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj": {
+              "projectPath": "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj"
             }
           }
         }

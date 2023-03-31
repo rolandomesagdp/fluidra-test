@@ -4,14 +4,14 @@
     "D:\\Study\\fluidra-test\\ProductsInfrastructure\\CatalogInfrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj": {
+    "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj",
+        "projectUniqueName": "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj",
         "projectName": "Catalog",
-        "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj",
+        "projectPath": "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj",
         "packagesPath": "C:\\Users\\Rolando\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\fluidra-test\\ProductReader\\obj\\",
+        "outputPath": "D:\\Study\\fluidra-test\\Catalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -94,8 +94,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj": {
-                "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj"
+              "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj": {
+                "projectPath": "D:\\Study\\fluidra-test\\Catalog\\Catalog.csproj"
               }
             }
           }

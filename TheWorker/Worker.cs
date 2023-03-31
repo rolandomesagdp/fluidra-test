@@ -6,7 +6,7 @@ using CatalogInfrastructure;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using CatalogIngestionWorker.DoAndRetry;
+using CatalogIngestionWorker.ReadAndRetry;
 
 namespace CatalogIngestionWorker
 {

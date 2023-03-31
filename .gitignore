@@ -1,8 +1,18 @@
 
-CatalogIngestionWorker/bin/
-CatalogIngestionWorker/obj/
+Catalog/bin/
+Catalog/obj/
+
 CatalogApi/bin/
 CatalogApi/obj/
+
+CatalogIngestionWorker/bin/
+CatalogIngestionWorker/obj/
+
+ProductsInfrastructure/bin/
+ProductsInfrastructure/obj/
+
+
+
 catalog-client/node_modules/
 .vs/
 *.dll

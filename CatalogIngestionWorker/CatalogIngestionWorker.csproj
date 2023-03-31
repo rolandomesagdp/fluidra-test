@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>dotnet-CatalogIngestionWorker-E8531EBD-370A-4AE5-AEDC-15218BC081E9</UserSecretsId>
+    <UserSecretsId>dotnet-CatalogIngestionWorker-E10D7BBE-9F1A-43FA-985B-7D02247433CE</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductReader\Catalog.csproj" />
+    <ProjectReference Include="..\Catalog\Catalog.csproj" />
     <ProjectReference Include="..\ProductsInfrastructure\CatalogInfrastructure.csproj" />
   </ItemGroup>
 </Project>

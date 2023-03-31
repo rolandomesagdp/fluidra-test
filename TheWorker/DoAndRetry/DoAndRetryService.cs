@@ -1,13 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
+using Catalog.Products;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CatalogIngestionWorker.DoAndRetry
+namespace CatalogIngestionWorker.ReadAndRetry
 {
     public class DoAndRetryService : IDoAndRetryService
     {
         private readonly ILogger<DoAndRetryService> _logger;
+        private readonly IProductService _productService;
 
         /// <summary>
         /// This is the number of retries.
@@ -21,9 +23,10 @@ namespace CatalogIngestionWorker.DoAndRetry
         /// </summary>
         public TimeSpan SleepPeriod { get; private set; } = TimeSpan.FromSeconds(2);
 
-        public DoAndRetryService(ILogger<DoAndRetryService> logger)
+        public DoAndRetryService(ILogger<DoAndRetryService> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
         /// <summary>

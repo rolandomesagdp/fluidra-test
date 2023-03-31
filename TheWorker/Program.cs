@@ -5,7 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Catalog.Products;
 using Catalog.RepositoryContracts;
 using CatalogInfrastructure;
-using CatalogIngestionWorker.DoAndRetry;
+using CatalogIngestionWorker.ReadAndRetry;
 
 namespace CatalogIngestionWorker
 {
