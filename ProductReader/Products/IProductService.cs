@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ProductReader.Products
+namespace Catalog.Products
 {
     public interface IProductService
     {

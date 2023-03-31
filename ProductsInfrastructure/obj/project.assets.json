@@ -174,17 +174,17 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
-      "ProductReader/1.0.0": {
+      "Catalog/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.32"
         },
         "compile": {
-          "bin/placeholder/ProductReader.dll": {}
+          "bin/placeholder/Catalog.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ProductReader.dll": {}
+          "bin/placeholder/Catalog.dll": {}
         }
       }
     }
@@ -560,17 +560,17 @@
         "version.txt"
       ]
     },
-    "ProductReader/1.0.0": {
+    "Catalog/1.0.0": {
       "type": "project",
-      "path": "../ProductReader/ProductReader.csproj",
-      "msbuildProject": "../ProductReader/ProductReader.csproj"
+      "path": "../ProductReader/Catalog.csproj",
+      "msbuildProject": "../ProductReader/Catalog.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Catalog >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
-      "Microsoft.EntityFrameworkCore.InMemory >= 5.0.0",
-      "ProductReader >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.InMemory >= 5.0.0"
     ]
   },
   "packageFolders": {
@@ -580,9 +580,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\ProductsInfrastructure.csproj",
-      "projectName": "ProductsInfrastructure",
-      "projectPath": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\ProductsInfrastructure.csproj",
+      "projectUniqueName": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\CatalogInfrastructure.csproj",
+      "projectName": "CatalogInfrastructure",
+      "projectPath": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\CatalogInfrastructure.csproj",
       "packagesPath": "C:\\Users\\Rolando\\.nuget\\packages\\",
       "outputPath": "D:\\Study\\fluidra-test\\ProductsInfrastructure\\obj\\",
       "projectStyle": "PackageReference",
@@ -604,8 +604,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Study\\fluidra-test\\ProductReader\\ProductReader.csproj": {
-              "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\ProductReader.csproj"
+            "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj": {
+              "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj"
             }
           }
         }

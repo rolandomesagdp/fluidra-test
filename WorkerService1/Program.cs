@@ -2,12 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProductReader.Products;
-using ProductReader.ReadAndRetry;
-using ProductReader.RepositoryContracts;
-using ProductsInfrastructure;
+using Catalog.Products;
+using Catalog.ReadAndRetry;
+using Catalog.RepositoryContracts;
+using CatalogInfrastructure;
 
-namespace DataIngestion
+namespace CatalogDataIngestion
 {
     public class Program
     {
@@ -20,12 +20,13 @@ namespace DataIngestion
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddSingleton<IFilesRepository, FilesRepository>();
                     services.AddSingleton<IProductsRepository, ProductsRepository>();
                     services.AddSingleton<IDoAndRetryService, DoAndRetryService>();
                     services.AddSingleton<IProductService, ProductService>();
                     services.AddHostedService<Worker>();
 
-                    services.AddDbContextFactory<ProductsContext>(options =>
+                    services.AddDbContextFactory<CatalogContext>(options =>
                     {
                         options.UseInMemoryDatabase("ProductDB")
                         .EnableSensitiveDataLogging()

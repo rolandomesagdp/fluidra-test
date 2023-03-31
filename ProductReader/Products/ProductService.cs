@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
-using ProductReader.RepositoryContracts;
+using Catalog.RepositoryContracts;
 using System.Threading.Tasks;
 
-namespace ProductReader.Products
+namespace Catalog.Products
 {
     public class ProductService : IProductService
     {
@@ -19,7 +19,7 @@ namespace ProductReader.Products
         {
             _logger.LogInformation("Updating products catalog");
 
-            var products = _productsRepository.FindNewProducts();
+            var products = await _productsRepository.GetAll();
             await _productsRepository.SaveProducts(products);
             await _productsRepository.SaveChangesAsync();
         }

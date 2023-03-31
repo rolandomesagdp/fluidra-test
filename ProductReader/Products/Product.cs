@@ -1,4 +1,4 @@
-﻿namespace ProductReader.Products
+﻿namespace Catalog.Products
 {
     public class Product
     {

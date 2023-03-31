@@ -1,31 +1,27 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ProductReader.Products;
-using ProductReader.ReadAndRetry;
-using ProductsInfrastructure;
+using Catalog.Products;
+using Catalog.ReadAndRetry;
+using CatalogInfrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DataIngestion
+namespace CatalogDataIngestion
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IDoAndRetryService _doAndRetryService;
-        private readonly IProductService _productService;
-        private readonly ProductsContext _productsContext;
+        private readonly CatalogContext _productsContext;
 
         public Worker(ILogger<Worker> logger, 
             IDoAndRetryService doAndRetryService, 
             IProductService productService,
-            IDbContextFactory<ProductsContext> contextFactory)
+            IDbContextFactory<CatalogContext> contextFactory)
         {
             _logger = logger;
-            _doAndRetryService = doAndRetryService;
-            _productService = productService;
             _productsContext = contextFactory.CreateDbContext();
         }
 
@@ -35,7 +31,7 @@ namespace DataIngestion
             await PopulateDb();
             while (!stoppingToken.IsCancellationRequested)
             {
-                await _doAndRetryService.DoAndRetry(_productService.UpdateProductsCatalog);
+                //await _doAndRetryService.DoAndRetry(_productService.UpdateProductsCatalog);
                 await Task.Delay(2000, stoppingToken);
             }
         }

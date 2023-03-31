@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
-using ProductReader.Products;
+using Catalog.Products;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ProductReader.ReadAndRetry
+namespace Catalog.ReadAndRetry
 {
     public class DoAndRetryService : IDoAndRetryService
     {
@@ -49,9 +49,7 @@ namespace ProductReader.ReadAndRetry
                 {
                     _logger.LogError(ex.Message);
                     if (currentAttempt == MaximumAttempts)
-                    {
                         throw ex;
-                    }
                     Thread.Sleep(SleepPeriod);
                 }
             }

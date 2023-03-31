@@ -41,9 +41,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study\\fluidra-test\\ProductReader\\ProductReader.csproj",
-      "projectName": "ProductReader",
-      "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\ProductReader.csproj",
+      "projectUniqueName": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj",
+      "projectName": "Catalog",
+      "projectPath": "D:\\Study\\fluidra-test\\ProductReader\\Catalog.csproj",
       "packagesPath": "C:\\Users\\Rolando\\.nuget\\packages\\",
       "outputPath": "D:\\Study\\fluidra-test\\ProductReader\\obj\\",
       "projectStyle": "PackageReference",

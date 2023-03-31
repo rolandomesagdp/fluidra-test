@@ -1,35 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ProductReader.Products;
-using ProductReader.RepositoryContracts;
-using ProductsInfrastructure.Files;
-using ProductsInfrastructure.ProductFileMappingStrategies;
+using Catalog.Products;
+using Catalog.RepositoryContracts;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductsInfrastructure
+namespace CatalogInfrastructure
 {
     public class ProductsRepository : IProductsRepository
     {
         private readonly ILogger<ProductsRepository> _logger;
-        private readonly ProductsContext _context;
+        private readonly CatalogContext _context;
+        private readonly IFilesRepository _filesRepository;
 
-        public ProductsRepository(ILogger<ProductsRepository> logger, IDbContextFactory<ProductsContext> contextFactory)
+        public ProductsRepository(ILogger<ProductsRepository> logger, IDbContextFactory<CatalogContext> contextFactory,
+            IFilesRepository filesRepository)
         {
             _logger = logger;
             _context = contextFactory.CreateDbContext();
+            _filesRepository = filesRepository;
         }
 
         public List<Product> FindNewProducts()
         {
             var products = new List<Product>();
             _logger.LogInformation("Start reading products from files");
-            var filesReader = new FtpFileReader();
-            var files = filesReader.GetAllFiles();
+            var files = _filesRepository.GetFiles();
 
             products = files.Select(x => x.AsProduct()).ToList();
-
+            _filesRepository.ClearFiles();
             return products;
         }
 
