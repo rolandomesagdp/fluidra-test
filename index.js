@@ -8,7 +8,6 @@ $(document).ready(() => {
             return;
         }
         $("#left-div").attr("class", "square blue-background");
-
     };
 
     $("#test-button").click(() => {
