@@ -2,12 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Catalog.Products;
-using Catalog.ReadAndRetry;
 using CatalogInfrastructure;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using CatalogDataIngestion.ReadAndRetry;
 
 namespace CatalogDataIngestion
 {
@@ -15,6 +14,8 @@ namespace CatalogDataIngestion
     {
         private readonly ILogger<Worker> _logger;
         private readonly CatalogContext _productsContext;
+        private readonly IProductService _productService;
+        private readonly IDoAndRetryService _doAndRetryService;
 
         public Worker(ILogger<Worker> logger, 
             IDoAndRetryService doAndRetryService, 
@@ -23,6 +24,8 @@ namespace CatalogDataIngestion
         {
             _logger = logger;
             _productsContext = contextFactory.CreateDbContext();
+            _productService = productService;
+            _doAndRetryService = doAndRetryService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -31,7 +34,7 @@ namespace CatalogDataIngestion
             await PopulateDb();
             while (!stoppingToken.IsCancellationRequested)
             {
-                //await _doAndRetryService.DoAndRetry(_productService.UpdateProductsCatalog);
+                await _doAndRetryService.DoAndRetry(_productService.UpdateProductsCatalog);
                 await Task.Delay(2000, stoppingToken);
             }
         }

@@ -24,8 +24,8 @@ namespace CatalogInfrastructure
 
         public List<Product> FindNewProducts()
         {
-            var products = new List<Product>();
             _logger.LogInformation("Start reading products from files");
+            var products = new List<Product>();
             var files = _filesRepository.GetFiles();
 
             products = files.Select(x => x.AsProduct()).ToList();

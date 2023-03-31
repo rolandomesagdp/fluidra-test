@@ -4,7 +4,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Catalog.ReadAndRetry
+namespace CatalogDataIngestion.ReadAndRetry
 {
     public class DoAndRetryService : IDoAndRetryService
     {

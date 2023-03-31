@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Catalog.Products;
-using Catalog.ReadAndRetry;
 using Catalog.RepositoryContracts;
 using CatalogInfrastructure;
+using CatalogDataIngestion.ReadAndRetry;
 
 namespace CatalogDataIngestion
 {

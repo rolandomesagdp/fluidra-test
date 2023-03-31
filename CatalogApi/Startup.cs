@@ -31,12 +31,6 @@ namespace CatalogApi
         {
             services.AddControllers();
             services.AddTransient<IFilesRepository, FilesRepository>();
-            services.AddDbContextFactory<CatalogContext>(options =>
-            {
-                options.UseInMemoryDatabase("ProductDB")
-                .EnableSensitiveDataLogging()
-                .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning));
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

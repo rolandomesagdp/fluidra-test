@@ -1,5 +1,8 @@
 
-fluidra-test/ProductReader/bin/
-fluidra-test/ProductReader/obj/
+WorkerService1/bin/
+WorkerService1/obj/
+CatalogApi/bin/
+CatalogApi/obj/
+catalog-client/node_modules/
 .vs/
 *.dll

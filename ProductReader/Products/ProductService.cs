@@ -19,7 +19,7 @@ namespace Catalog.Products
         {
             _logger.LogInformation("Updating products catalog");
 
-            var products = await _productsRepository.GetAll();
+            var products = _productsRepository.FindNewProducts();
             await _productsRepository.SaveProducts(products);
             await _productsRepository.SaveChangesAsync();
         }
