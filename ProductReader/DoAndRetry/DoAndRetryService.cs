@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using ProductReader.Products;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProductReader.ReadAndRetry
@@ -14,13 +15,13 @@ namespace ProductReader.ReadAndRetry
         /// This is the number of retries.
         /// In a real world app this value would come from appsettings.json.
         /// </summary>
-        public int RetryCount { get; private set; } = 3;
+        public int MaximumAttempts { get; private set; } = 3;
 
         /// <summary>
         /// This is the Sleep time after an attemp fails.
         /// In a real world app this value would come from appsettings.json as a number of seconds.
         /// </summary>
-        public TimeSpan SleepPeriod { get; private set; } = TimeSpan.FromSeconds(10);
+        public TimeSpan SleepPeriod { get; private set; } = TimeSpan.FromSeconds(2);
 
         public DoAndRetryService(ILogger<DoAndRetryService> logger, IProductService productService)
         {
@@ -29,12 +30,37 @@ namespace ProductReader.ReadAndRetry
         }
 
         /// <summary>
-        /// Here starts the reading process.
+        /// Generic retry logic.
         /// </summary>
-        public async Task Do(Func<Task> action)
+        public async Task DoAndRetry(Func<Task> action)
         {
-            _logger.LogInformation("Reading from files and storing the values...");
-            await _productService.UpdateProductsCatalog();
+            var currentAttempt = 0;
+
+            while (true)
+            {
+                currentAttempt++;
+                try
+                {
+                    //TestRetry(currentAttempt);
+                    await action();
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message);
+                    if (currentAttempt == MaximumAttempts)
+                    {
+                        throw ex;
+                    }
+                    Thread.Sleep(SleepPeriod);
+                }
+            }
+        }
+
+        private void TestRetry(int currentAttempt)
+        {
+            if (currentAttempt < MaximumAttempts)
+                throw new Exception("Forcing retry");
         }
     }
 }

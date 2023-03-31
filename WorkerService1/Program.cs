@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProductReader.Products;
@@ -5,7 +7,7 @@ using ProductReader.ReadAndRetry;
 using ProductReader.RepositoryContracts;
 using ProductsInfrastructure;
 
-namespace WorkerService1
+namespace DataIngestion
 {
     public class Program
     {
@@ -22,6 +24,13 @@ namespace WorkerService1
                     services.AddSingleton<IDoAndRetryService, DoAndRetryService>();
                     services.AddSingleton<IProductService, ProductService>();
                     services.AddHostedService<Worker>();
+
+                    services.AddDbContextFactory<ProductsContext>(options =>
+                    {
+                        options.UseInMemoryDatabase("ProductDB")
+                        .EnableSensitiveDataLogging()
+                        .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning));
+                    });
                 });
     }
 }

@@ -14,13 +14,14 @@ namespace ProductReader.Products
             _logger = logger;
             _productsRepository = productsRepository;
         }
+
         public async Task UpdateProductsCatalog()
         {
-            await Task.Run(() =>
-            {
-                _logger.LogInformation("Updating products catalog");
-                _productsRepository.GetAll();
-            });
+            _logger.LogInformation("Updating products catalog");
+
+            var products = _productsRepository.FindNewProducts();
+            await _productsRepository.SaveProducts(products);
+            await _productsRepository.SaveChangesAsync();
         }
     }
 }

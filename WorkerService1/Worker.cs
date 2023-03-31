@@ -1,45 +1,58 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ProductReader.Products;
 using ProductReader.ReadAndRetry;
+using ProductsInfrastructure;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WorkerService1
+namespace DataIngestion
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IDoAndRetryService _readAndRetryService;
+        private readonly IDoAndRetryService _doAndRetryService;
         private readonly IProductService _productService;
+        private readonly ProductsContext _productsContext;
 
-        public Worker(ILogger<Worker> logger, IDoAndRetryService readAndRetryService, IProductService productService)
+        public Worker(ILogger<Worker> logger, 
+            IDoAndRetryService doAndRetryService, 
+            IProductService productService,
+            IDbContextFactory<ProductsContext> contextFactory)
         {
             _logger = logger;
-            _readAndRetryService = readAndRetryService;
+            _doAndRetryService = doAndRetryService;
             _productService = productService;
+            _productsContext = contextFactory.CreateDbContext();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("Data ingestion service starting...");
+            _logger.LogInformation("Data ingestion worker starting...");
+            await PopulateDb();
             while (!stoppingToken.IsCancellationRequested)
             {
-                await _readAndRetryService.Do(_productService.UpdateProductsCatalog);
-                await Task.Delay(1000, stoppingToken);
+                await _doAndRetryService.DoAndRetry(_productService.UpdateProductsCatalog);
+                await Task.Delay(2000, stoppingToken);
             }
         }
 
-        private ILogger<DoAndRetryService> ReadingServiceLogger()
+        public async Task PopulateDb()
         {
-            using var loggerFactory = LoggerFactory.Create(builder =>
+            var productsList = new List<Product>
             {
-                builder.SetMinimumLevel(LogLevel.Information);
-                builder.AddConsole();
-                builder.AddEventSourceLogger();
-            });
-            var logger = loggerFactory.CreateLogger<DoAndRetryService>();
-            return logger;
+                new Product { ProductName = "Product 1"},
+                new Product { ProductName = "Product 2"},
+                new Product { ProductName = "Product 3"},
+                new Product { ProductName = "Product 4"}
+            };
+            await _productsContext.Products.AddRangeAsync(productsList);
+            await _productsContext.SaveChangesAsync();
+
+            _logger.LogInformation("DB populated");
         }
     }
 }

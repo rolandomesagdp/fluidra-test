@@ -5,10 +5,10 @@ namespace ProductReader.ReadAndRetry
 {
     public interface IDoAndRetryService
     {
-        int RetryCount { get; }
+        int MaximumAttempts { get; }
 
         TimeSpan SleepPeriod { get; }
 
-        Task Do(Func<Task> action);
+        Task DoAndRetry(Func<Task> action);
     }
 }

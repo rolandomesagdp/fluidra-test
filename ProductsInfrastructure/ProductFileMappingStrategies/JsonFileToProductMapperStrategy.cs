@@ -1,23 +1,22 @@
-﻿using Microsoft.Extensions.Logging;
-using ProductReader.Products;
+﻿using ProductReader.Products;
 using ProductsInfrastructure.Files;
 using ProductsInfrastructure.ProductFileParser;
-using System.Collections.Generic;
+using System;
 
 namespace ProductsInfrastructure.ProductFileMapper
 {
     internal class JsonFileToProductMapperStrategy : IFileToProductMappingStrategy
     {
-        private readonly ILogger _logger;
-
-        public JsonFileToProductMapperStrategy(ILogger logger)
-        {
-            _logger = logger;
-        }
+        /// <summary>
+        /// Here goes the logic for reading a json file and map it to a Product entity
+        /// The logic below dummy example for the sake of time. Im concentrated only in the architectural structure.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public Product MapFileToProduct(ProductFile file)
         {
-            _logger.LogInformation("Maping products from Json file");
-            return new Product();
+            Console.WriteLine("Maping products from Json file");
+            return new Product { ProductName = file.FileName };
         }
     }
 }
