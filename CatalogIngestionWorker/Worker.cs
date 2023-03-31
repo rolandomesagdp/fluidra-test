@@ -6,9 +6,9 @@ using CatalogInfrastructure;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using CatalogDataIngestion.ReadAndRetry;
+using CatalogIngestionWorker.ReadAndRetry;
 
-namespace CatalogDataIngestion
+namespace CatalogIngestionWorker
 {
     public class Worker : BackgroundService
     {
@@ -17,8 +17,8 @@ namespace CatalogDataIngestion
         private readonly IProductService _productService;
         private readonly IDoAndRetryService _doAndRetryService;
 
-        public Worker(ILogger<Worker> logger, 
-            IDoAndRetryService doAndRetryService, 
+        public Worker(ILogger<Worker> logger,
+            IDoAndRetryService doAndRetryService,
             IProductService productService,
             IDbContextFactory<CatalogContext> contextFactory)
         {

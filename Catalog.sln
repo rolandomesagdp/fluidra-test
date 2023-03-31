@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogDataIngestionWorker", "CatalogDataIngestionWorker.csproj", "{04841A5D-8B82-49C1-8A76-612E58565B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog", "ProductReader\Catalog.csproj", "{B00159E1-E2B5-4829-B41E-C4D9D88B7A47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog", "..\ProductReader\Catalog.csproj", "{B00159E1-E2B5-4829-B41E-C4D9D88B7A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogInfrastructure", "ProductsInfrastructure\CatalogInfrastructure.csproj", "{B2C3C1E2-758C-433E-9FE3-B4D9B15C18AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogInfrastructure", "..\ProductsInfrastructure\CatalogInfrastructure.csproj", "{B2C3C1E2-758C-433E-9FE3-B4D9B15C18AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogApi", "CatalogApi\CatalogApi.csproj", "{822ED246-F169-4B96-8ED7-49832BBB324B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogApi", "..\CatalogApi\CatalogApi.csproj", "{822ED246-F169-4B96-8ED7-49832BBB324B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogIngestionWorker", "CatalogIngestionWorker\CatalogIngestionWorker.csproj", "{037D3CD3-CBF2-4FA0-AA6E-FDCDC178B682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04841A5D-8B82-49C1-8A76-612E58565B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04841A5D-8B82-49C1-8A76-612E58565B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04841A5D-8B82-49C1-8A76-612E58565B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04841A5D-8B82-49C1-8A76-612E58565B84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B00159E1-E2B5-4829-B41E-C4D9D88B7A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B00159E1-E2B5-4829-B41E-C4D9D88B7A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B00159E1-E2B5-4829-B41E-C4D9D88B7A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{822ED246-F169-4B96-8ED7-49832BBB324B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822ED246-F169-4B96-8ED7-49832BBB324B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822ED246-F169-4B96-8ED7-49832BBB324B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037D3CD3-CBF2-4FA0-AA6E-FDCDC178B682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037D3CD3-CBF2-4FA0-AA6E-FDCDC178B682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037D3CD3-CBF2-4FA0-AA6E-FDCDC178B682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037D3CD3-CBF2-4FA0-AA6E-FDCDC178B682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

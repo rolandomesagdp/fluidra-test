@@ -1,12 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>dotnet-WorkerService1-CF2A4CB3-31D1-4E42-96C4-E4E09601ED1A</UserSecretsId>
+    <UserSecretsId>dotnet-CatalogIngestionWorker-E8531EBD-370A-4AE5-AEDC-15218BC081E9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.32" />
   </ItemGroup>
 

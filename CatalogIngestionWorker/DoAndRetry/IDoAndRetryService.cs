@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CatalogDataIngestion.ReadAndRetry
+namespace CatalogIngestionWorker.ReadAndRetry
 {
     public interface IDoAndRetryService
     {

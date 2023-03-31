@@ -1,6 +1,6 @@
 
-WorkerService1/bin/
-WorkerService1/obj/
+CatalogIngestionWorker/bin/
+CatalogIngestionWorker/obj/
 CatalogApi/bin/
 CatalogApi/obj/
 catalog-client/node_modules/
